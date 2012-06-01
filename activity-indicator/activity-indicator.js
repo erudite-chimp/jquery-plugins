@@ -178,7 +178,7 @@
 
 		$('body').append(s);
 
-		if (s.get(0).adj) {
+		if (s && s.get(0) && s.get(0).adj) {
 		
 			// VML support detected. Insert CSS rules for group, shape and stroke.
 			var sheet = document.createStyleSheet();
