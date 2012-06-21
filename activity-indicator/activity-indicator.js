@@ -174,11 +174,11 @@
 		// VML Rendering
 		// =======================================================================================
 		
-		var s = $('<shape>').css('behavior', 'url(#default#VML)');
+		var s = $('div').appendTo('body').html('<v:shape id="vml_flag1" adj="1" />');
 
-		$('body').append(s);
+		s = s.find(':first').css('behavior', 'url(#default#VML)');
 
-		if (s && s.get(0) && s.get(0).adj) {
+		if ((s[0] ? typeof s[0].adj == "object" : true)) {
 		
 			// VML support detected. Insert CSS rules for group, shape and stroke.
 			var sheet = document.createStyleSheet();
@@ -218,7 +218,7 @@
 				},  duration * 1000 / steps));
 			};
 		}
-		$(s).remove();
+		$(s).parent().remove();
 	}
 
 })(jQuery);
