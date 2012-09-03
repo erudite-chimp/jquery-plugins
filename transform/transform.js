@@ -225,7 +225,7 @@
 				
 				$this.css(css);
 				if (opts.duration > 0) {
-					$this.one('webkitTransitionEnd oTransitionEnd transitionend', afterCompletion);
+					$this.one('webkitTransitionEnd oTransitionEnd otransitionend transitionend', afterCompletion);
 				}
 				else {
 					setTimeout(afterCompletion, 1);					
@@ -266,3 +266,4 @@
 	};
 	
 })(jQuery);
+
